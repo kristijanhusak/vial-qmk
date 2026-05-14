@@ -25,8 +25,12 @@ void turned(bool clockwise) {
         return;
     }
 
-	encoder_exec_mapping(0, clockwise);
+	encoder_queue_event(0, clockwise);
 }
+
+void encoder_driver_init(void) {}
+
+void encoder_driver_task(void) {}
 
 void fix_encoder_action(matrix_row_t current_matrix[]) {
     matrix_row_t encoder_row = current_matrix[ENC_ROW];

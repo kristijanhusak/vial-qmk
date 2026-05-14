@@ -1,7 +1,7 @@
 {
     "name": "Cheapino2",
-    "vendorId": "0xFEE3",
-    "productId": "0x0001",
+    "vendorId": "0xFEF3",
+    "productId": "0xAFB7",
     "matrix": {
         "cols": 12,
         "rows": 8
