@@ -23,17 +23,10 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     //                  Encoder 1                                     Encoder 2
 };
 
-bool is_flow_tap_key(uint16_t keycode) {
-    if ((get_mods() & (MOD_MASK_CG | MOD_BIT_LALT)) != 0) {
-        return false; // Disable Flow Tap on hotkeys.
-    }
-    switch (get_tap_keycode(keycode)) {
-        case KC_A ... KC_Z:
-        case KC_DOT:
-        case KC_COMM:
-        case KC_SCLN:
-        case KC_SLSH:
-            return true;
-    }
-    return false;
-}
+const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
+    LAYOUT_split_3x5_3(
+        'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R',
+                  '*', '*', '*',  '*', '*', '*', '*'
+    );
